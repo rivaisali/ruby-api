@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.6.1)
+    colorize (0.7.7)
+    highline (1.7.8)
+    shell-spinner (1.0.4)
+      colorize
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  highline
+  shell-spinner
+
+BUNDLED WITH
+   1.11.2
