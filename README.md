@@ -1,12 +1,12 @@
 # wsc-api-examples-ruby
 
-#### Wowza Streaming Cloud™ API - Example Application for the Live Stream workflow written in Ruby
+#### Wowza Streaming Cloud™ REST API - Example Application for the Live Stream Workflow Written in Ruby
 
-This API example application demonstrates the Live Stream workflow using the `/live_streams` endpoint of the Wowza Streaming Cloud™ API Version 1.
+This API example application demonstrates the live stream workflow using the `/live_streams` endpoint of the Wowza Streaming Cloud™ service REST API version 1.
 
-> The Wowza Streaming Cloud™ REST API version 1.0 is in a public preview release and isn't intended for use in production environments. All use of the Wowza Streaming Cloud™ REST API is subject to the Wowza Streaming Cloud™ Terms of Use.
+> The Wowza Streaming Cloud REST API version 1.0 is in a public preview release and isn't intended for use in production environments. All use of the Wowza Streaming Cloud™ REST API is subject to the Wowza Streaming Cloud™ Terms of Use.
 
-If you just want to know how to use the Wowza Streaming Cloud™ API using the Ruby Net::HTTP library, [look at this section](#how_to_ruby_net_http).
+If you just want to know how to use the Wowza Streaming Cloud API using the Ruby Net::HTTP library, [look at this section](#how_to_ruby_net_http).
 
 ## Contents
 - [Prerequisites](#prerequisites)
@@ -14,7 +14,7 @@ If you just want to know how to use the Wowza Streaming Cloud™ API using the R
 - [Configuration](#configuration)
 - [Run the application](#run)
 - [How to use the example application](#how_to_use)
-- [How to use the Wowza Streaming Cloud™ API working with the Ruby Net::HTTP library](#how_to_ruby_net_http)
+- [How to use the Wowza Streaming Cloud REST API with the Ruby Net::HTTP library](#how_to_ruby_net_http)
 - [References](#references)
 - [Contact](#contact)
 - [License](#license)
@@ -22,12 +22,12 @@ If you just want to know how to use the Wowza Streaming Cloud™ API using the R
 <a name="prerequisites"></a>
 ## Prerequisites
 
-To install the example application make sure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/), [RubyGems](https://rubygems.org/) and [Bundler](http://bundler.io/) ready to use on your system!
+To install the example application make sure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/), [RubyGems](https://rubygems.org/), and [Bundler](http://bundler.io/) ready to use on your system.
 
 <a name="installation"></a>
 ## Installation
 
-##### 1. In the terminal, make sure you're in your application directory:
+##### 1. In Terminal, make sure you're in your application directory:
 
 ```bash
 $ cd /wsc-api-example-ruby
@@ -39,26 +39,26 @@ $ cd /wsc-api-example-ruby
 $ bundle install
 ```
 
-You're done!!
+You're done!
 
 <a name="configuration"></a>
 ## Configuration
 
-To use the application you need a valid account on Wowza Streaming Cloud™ (https://cloud.wowza.com/) and access to the API.
+To use the application you need a valid Wowza Streaming Cloud account (https://cloud.wowza.com/) and access to the API.
 
-> You don't have API access? To access the API, you must submit a request form at https://www.wowza.com/products/streaming-cloud/features/api-access-request. After you're accepted to the Wowza Streaming Cloud™ REST API public preview, your API key will be available on the page 'API Access' on https://cloud.wowza.com/.
+> If you don't have API access, submit a request at https://www.wowza.com/products/streaming-cloud/features/api-access-request. After you're accepted to the Wowza Streaming Cloud REST API public preview, your API key will be available on the 'API Access' page on https://cloud.wowza.com/.
 
 #### Put the 'API Key' and the 'API Access Key' into the configuration file:
 
 ```yml
 # config/keys.yml
-api_key: "- PLEASE PLACE YOUR API KEY HERE -"
-api_access_key: "- PLEASE PLACE YOUR API ACCESS KEY HERE -"
+api_key: "- PASTE YOUR API KEY HERE -"
+api_access_key: "- PASTE YOUR API ACCESS KEY HERE -"
 ```
 
-#### Change the hostname of the Wowza Streaming Cloud™ environment (optional)
+#### (Optional) Change the hostname of the Wowza Streaming Cloud environment
 
-You have two options. To use our Sandbox environment and be save, use this hostname:
+You have two options. To use our sandbox environment and be safe, use this hostname:
 
 ```yml
 # config/settings.yml
@@ -66,9 +66,9 @@ api_base_url: "https://api-sandbox.cloud.wowza.com"
 ...
 ```
 
-> This is the default. If you don't change anything you will hit the our free of charge Sandbox service.
+> This is the default. If you don't change anything you will hit the free sandbox environment.
 
-If you know what to and want to hit your live account, use this hostname - **NOT free of charge!**:
+If you know what to do and want to hit your live account (**and accrue charges**), use this hostname:
 
 ```yml
 # config/settings.yml
@@ -76,9 +76,9 @@ api_base_url: "https://api.cloud.wowza.com"
 ...
 ```
 
-#### Enable debug output (optional)
+#### (Optional) Enable debug output
 
-If you want to see header response data and response codes for each API call enable it in the settings:
+If you want to see header response data and response codes for each API call, enable it in the settings:
 
 ```yml
 # config/settings.yml
@@ -91,7 +91,7 @@ This is disabled by default.
 <a name="run"></a>
 ## Run the application
 
-##### In the terminal, make sure you're in your application directory and execute the ruby file:
+##### In Terminal, make sure you're in your application directory and execute the Ruby file:
 
 ```bash
 $ ./live_stream_api_example.rb
@@ -102,50 +102,50 @@ That's all.
 <a name="how_to_use"></a>
 ## How to use the example application
 
-After launching the application, you see the main menu with several action items. Just enter a number and hit enter and you will be guided through the application, it's easy.
+After launching the application, you'll see the main menu with several action items. Just enter a number and press Return to be guided through the application. It's easy.
 
 *The screen after launching the application:*
 ```
 "Main Menu"
 
-1. Show the amount of Live Streams in your account
-2. List all Live Streams of your account
-3. Create a new Live Stream with pre-configured settings     => data/live_stream.json
-4. Show the details of an existing Live Stream
-5. Update a Live Stream with pre-configured settings         => data/live_stream_update.json
-6. Start a Live Stream                                       => only for Live Streams with the state 'stopped'
-7. Reset a Live Stream                                       => only for Live Streams with the state 'started'
-8. Stop a Live Stream                                        => only for Live Streams with the state 'started'
-9. Show the current state of a Live Stream
-10. Show the thumbnail URL of a Live Stream                  => only for Live Streams with the state 'started'
-11. Delete a Live Stream
-12. Run the pre-configured Live Stream workflow
+1. Show the number of live streams in your account
+2. List all live streams of your account
+3. Create a live stream with pre-configured settings     => data/live_stream.json
+4. Show the details of an existing live stream
+5. Update a live stream with pre-configured settings         => data/live_stream_update.json
+6. Start a live stream                                       => only for live streams with the state 'stopped'
+7. Reset a live stream                                       => only for live streams with the state 'started'
+8. Stop a live stream                                        => only for live streams with the state 'started'
+9. Show the current state of a live stream
+10. Show the thumbnail URL of a live stream                  => only for live streams with the state 'started'
+11. Delete a live stream
+12. Run the pre-configured live stream workflow
 13. Quit :(
 
-What do you want to do? Please enter a number!
+Enter the number for the action you want to execute.
 ```
 
-The **Actions 1 to 11** are using single API calls to your account's data. This should give you an overview what you can do with the `/live_streams` endpoint on Wowza Streaming Cloud™.
+**Actions 1 through 11** use single API calls to your account's data. This should give you an overview what you can do with the `/live_streams` endpoint on Wowza Streaming Cloud.
 
-**Action 12**'s - 'Run the pre-configured Live Stream workflow' - purpose is to give you an idea about the Live Stream workflow. It uses the same code that is used in the actions 1-11. It is separated into the following steps:
+**Action 12**, 'Run the pre-configured live stream workflow', is meant to give you an idea of the complete live stream workflow. It uses the same code as actions 1-11. It is separated into the following steps:
 
-- create a Live Stream
-- start the Live Stream
-- poll the status of the Live Stream (to know when the Live Stream in your requested location is ready to use)
-- poll status of the player that was created with your Live Stream (to know when the player and the hosted page are successfully provisioned and ready to use)
+- create a live stream
+- start the live stream
+- poll the status of the live stream (to know when the live stream in your requested location is ready to use)
+- poll the status of the player that was created with your live stream (to know when the player and the hosted page are successfully provisioned and ready to use)
 - receive the hosted page URL (where you can watch the stream)
-- stop the Live Stream
-- delete the Live Stream
+- stop the live stream
+- delete the live stream
 
 You will be guided through each step.
 
-> Note: the Live Stream settings that are used in this sample application are based on an "Other RTSP Pull" encoder setting described in our user interface on https://cloud.wowza.com/. The data is stored in a JSON file in the 'data' directory:
+> Note: The live stream settings used in this example application are based on the 'Other RTSP Pull' encoder setting described in our user interface on https://cloud.wowza.com/. The data is stored in a JSON file in the 'data' directory:
 
 ```json
 # data/live_stream.json
 {
   "live_stream": {
-    "name": "My Awesome Live Stream",
+    "name": "My Awesome live stream",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
@@ -159,9 +159,9 @@ You will be guided through each step.
 ```
 
 <a name="how_to_ruby_net_http"></a>
-## How to use the Wowza Streaming Cloud™ API working with the Ruby Net::HTTP library
+## How to use the Wowza Streaming Cloud™ REST API with the Ruby Net::HTTP library
 
-#### Get a list of all Live Streams of your account (GET):
+#### Get a list of all live streams of your account (GET):
 
 ```ruby
 require 'net/http'
@@ -213,9 +213,9 @@ Example Response:
 }
 ```
 
-> The other examples below only show the differences to the one above.
+> The examples that follow show only the differences from the preceding example.
 
-#### Create a new Live Stream (POST):
+#### Create a live stream (POST):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/")
@@ -240,7 +240,7 @@ Example Response:
 }
 ```
 
-#### Details of a Live Stream (GET):
+#### Details of a live stream (GET):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
@@ -284,7 +284,7 @@ Example Response:
 }
 ```
 
-#### Update a Live Stream (PATCH):
+#### Update a live stream (PATCH):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
@@ -309,7 +309,7 @@ Example Response:
 }
 ```
 
-#### Start a Live Stream (PUT):
+#### Start a live stream (PUT):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/start/")
@@ -328,7 +328,7 @@ Example Response:
 }
 ```
 
-#### Reset a Live Stream (PUT):
+#### Reset a live stream (PUT):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/reset/")
@@ -347,7 +347,7 @@ Example Response:
 }
 ```
 
-#### Stop a Live Stream (PUT):
+#### Stop a live stream (PUT):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/stop/")
@@ -366,7 +366,7 @@ Example Response:
 }
 ```
 
-#### Poll the state of a Live Stream (GET):
+#### Poll the state of a live stream (GET):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/state/")
@@ -385,7 +385,7 @@ Example Response:
 }
 ```
 
-#### Poll the state of a Player that was created with a Live Stream (GET):
+#### Poll the state of a player that was created with a live stream (GET):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/players/[PLAYER_ID]/state/")
@@ -404,7 +404,7 @@ Example Response:
 }
 ```
 
-#### Thumbnail URL (preview image) of a Live Stream (GET):
+#### Thumbnail URL (preview image) of a live stream (GET):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/thumbnail_url/")
@@ -423,7 +423,7 @@ Example Response:
 }
 ```
 
-#### Delete a Live Stream (DELETE):
+#### Delete a live stream (DELETE):
 
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
@@ -440,13 +440,13 @@ Example Response:
 <a name="references"></a>
 ## References
 
-[Get Access to the Public Preview of the Wowza Streaming Cloud™ API](https://www.wowza.com/products/streaming-cloud/features/api-access-request)
+[Get access to the Wowza Streaming Cloud REST API public preview](https://www.wowza.com/products/streaming-cloud/features/api-access-request)
 
-[Your API Keys (API access required)](https://cloud.wowza.com/en/manage/access_keys)
+[Your API keys (API access required)](https://cloud.wowza.com/en/manage/access_keys)
 
-[Interactive API Documentation (API access required)](https://sandbox.cloud.wowza.com/apidocs/v1/)
+[Interactive API documentation (API access required)](https://sandbox.cloud.wowza.com/apidocs/v1/)
 
-[Wowza Streaming Cloud Forum Articles](https://www.wowza.com/forums/content.php?775-Wowza-Streaming-Cloud-REST-API)
+[Wowza Streaming Cloud Support articles](https://www.wowza.com/forums/content.php?775-Wowza-Streaming-Cloud-REST-API)
 
 <a name="contact"></a>
 ## Contact

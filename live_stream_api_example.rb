@@ -426,18 +426,18 @@ class LiveStreamApiExample
   #
   def menu
     options = {
-      count:         "Show the amount of Live Streams in your account",
-      list:          "List all Live Streams of your account",
-      create:        "Create a new Live Stream with pre-configured settings     => data/live_stream.json",
-      show:          "Show the details of an existing Live Stream",
-      update:        "Update a Live Stream with pre-configured settings         => data/live_stream_update.json",
-      start:         "Start a Live Stream                                       => only for Live Streams with the state 'stopped'",
-      reset:         "Reset a Live Stream                                       => only for Live Streams with the state 'started'",
-      stop:          "Stop a Live Stream                                        => only for Live Streams with the state 'started'",
-      state:         "Show the current state of a Live Stream",
-      thumbnail_url: "Show the thumbnail URL of a Live Stream                  => only for Live Streams with the state 'started'",
-      delete:        "Delete a Live Stream",
-      workflow:      "Run the pre-configured Live Stream workflow",
+      count:         "Show the number of live streams in your account",
+      list:          "List all live streams of your account",
+      create:        "Create a live stream with pre-configured settings         => data/live_stream.json",
+      show:          "Show the details of an existing live stream",
+      update:        "Update a live stream with pre-configured settings         => data/live_stream_update.json",
+      start:         "Start a live stream                                       => only for Live Streams with the state 'stopped'",
+      reset:         "Reset a live stream                                       => only for Live Streams with the state 'started'",
+      stop:          "Stop a live stream                                        => only for Live Streams with the state 'started'",
+      state:         "Show the current state of a live stream",
+      thumbnail_url: "Show the thumbnail URL of a live stream                  => only for Live Streams with the state 'started'",
+      delete:        "Delete a live stream",
+      workflow:      "Run the pre-configured live stream workflow",
       quit:          "Quit :("
     }
     @cli = HighLine.new
@@ -446,7 +446,7 @@ class LiveStreamApiExample
         puts "\n"
         ap "Main Menu"
         puts "\n"
-        menu.prompt = "\nWhat do you want to do? Please enter a number!"
+        menu.prompt = "\nEnter the number for the action you want to execute."
         options.each_with_index do |(method, description), index|
           menu.choice(description) do
             puts "\n"
