@@ -1,0 +1,13 @@
+# Axis
+{
+  "live_stream": {
+    "name": "API Example: Axis",
+    "transcoder_type": "transcoded",
+    "billing_mode": "pay_as_you_go",
+    "broadcast_location": "us_west_california",
+    "encoder": "axis",
+    "source_url": "username:password@127.0.0.1/axis-media/media.amp",
+    "aspect_ratio_width": 1920,
+    "aspect_ratio_height": 1080
+  }
+}

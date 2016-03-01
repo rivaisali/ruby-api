@@ -1,0 +1,9 @@
+# Wowza Streaming Engine (multi-bitrate)
+{
+  "live_stream": {
+    "name": "API Example: Wowza Streaming Engine (multi-bitrate)",
+    "broadcast_location": "us_west_california",
+    "encoder": "wowza_streaming_engine",
+    "delivery_type": "multi-bitrate"
+  }
+}

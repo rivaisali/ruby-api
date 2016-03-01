@@ -1,0 +1,27 @@
+# Other RTMP Push with more more properties
+{
+  "live_stream": {
+    "name": "API Example: More Properties on Other RTMP Push",
+    "transcoder_type": "transcoded",
+    "billing_mode": "pay_as_you_go",
+    "broadcast_location": "us_west_california",
+    "recording": true,
+    "closed_caption_type": "cea",
+    "encoder": "other_rtmp",
+    "delivery_method": "push",
+    "use_stream_source": false,
+    "aspect_ratio_width": 1920,
+    "aspect_ratio_height": 1080,
+    "disable_authentication": false,
+    "username": "username1",
+    "password": "password1",
+    "player_responsive:": false,
+    "player_width": 800,
+    "player_countdown": true,
+    "player_countdown_at": "2016-08-17T17:59:25.251Z",
+    "hosted_page": true,
+    "hosted_page_title": "MyHPTitle",
+    "hosted_page_description": "MyHPDesc",
+    "hosted_page_sharing_icons": true
+  }
+}

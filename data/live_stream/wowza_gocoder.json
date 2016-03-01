@@ -1,0 +1,12 @@
+# Wowza GoCoder
+{
+  "live_stream": {
+    "name": "API Example: Wowza GoCoder",
+    "transcoder_type": "transcoded",
+    "billing_mode": "pay_as_you_go",
+    "broadcast_location": "us_west_california",
+    "encoder": "wowza_gocoder",
+    "aspect_ratio_width": 1920,
+    "aspect_ratio_height": 1080
+  }
+}

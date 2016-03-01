@@ -1,14 +1,14 @@
+# Other RTMP Pull
 {
   "live_stream": {
-    "name": "Wowza's Office Cam / Golden, CO",
+    "name": "API Example: Other RTMP Pull",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "other_rtsp",
+    "encoder": "other_rtmp",
     "delivery_method": "pull",
-    "source_url": "198.233.230.244/axis-media/media.amp",
+    "source_url": "mysourcedomain.net/live/myStream",
     "aspect_ratio_width": 1920,
-    "aspect_ratio_height": 1080,
-    "player_responsive": true
+    "aspect_ratio_height": 1080
   }
 }

@@ -62,7 +62,7 @@ class LiveStreamApiExample
   # returns the full API response object
   #
   def create
-    create_json = JSON.parse(File.read('data/live_stream/rtsp_pull.json'))
+    create_json = JSON.parse(File.read('data/live_stream/other_rtsp_pull.json'))
     response = call_api method: :post, body: create_json
     ap JSON.parse(response.body)
     return response
@@ -428,9 +428,9 @@ class LiveStreamApiExample
     options = {
       count:         "Show the number of live streams in your account",
       list:          "List all live streams of your account",
-      create:        "Create a live stream with pre-configured settings         => data/live_stream/rtsp_pull.json",
+      create:        "Create a live stream with pre-configured settings         => data/live_stream/other_rtsp_pull.json",
       show:          "Show the details of an existing live stream",
-      update:        "Update a live stream with pre-configured settings         => data/live_stream/update.json",
+      update:        "Update a live stream with pre-configured settings         => data/live_stream/update_example.json",
       start:         "Start a live stream                                       => only for Live Streams with the state 'stopped'",
       reset:         "Reset a live stream                                       => only for Live Streams with the state 'started'",
       stop:          "Stop a live stream                                        => only for Live Streams with the state 'started'",
