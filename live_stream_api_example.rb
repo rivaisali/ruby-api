@@ -61,8 +61,7 @@ class LiveStreamApiExample
   #
   # returns the full API response object
   #
-  def create
-    create_json = JSON.parse(File.read('data/live_stream/other_rtsp_pull.json'))
+  def create create_json
     response = call_api method: :post, body: create_json
     ap JSON.parse(response.body)
     return response
@@ -90,7 +89,7 @@ class LiveStreamApiExample
   # returns the full API response object
   #
   def update uid
-    update_json = JSON.parse(File.read('data/live_stream/update.json'))
+    update_json = JSON.parse(File.read('./data/live_stream/update.json'))
     response = call_api method: :patch, id: uid, body: update_json
     ap JSON.parse(response.body)
     return response
@@ -198,7 +197,9 @@ class LiveStreamApiExample
     ap "Step #{next_step}: We are going to create a new pre-configured Live Stream.", color: {string: :purpleish}
     puts "\n"
     @cli.ask next_step_text
-    response = create
+    # we are going to use the pre-configured 'Other RTSP Pull' example
+    encoder_json = JSON.parse(File.read('./data/live_stream/encoder_types/other_rtsp_pull.json'))
+    response = create encoder_json
     response_json = JSON.parse(response.body)
     # save the id and the player id of the live stream for later use
     id = response_json['live_stream']['id']
@@ -428,7 +429,7 @@ class LiveStreamApiExample
     options = {
       count:         "Show the number of live streams in your account",
       list:          "List all live streams of your account",
-      create:        "Create a live stream with pre-configured settings         => data/live_stream/other_rtsp_pull.json",
+      create:        "Create a live stream with pre-configured settings         => data/live_stream/encoder_types/other_rtsp_pull.json",
       show:          "Show the details of an existing live stream",
       update:        "Update a live stream with pre-configured settings         => data/live_stream/update_example.json",
       start:         "Start a live stream                                       => only for Live Streams with the state 'stopped'",
@@ -454,27 +455,48 @@ class LiveStreamApiExample
             ap "Processing Option #{index+1}: #{description}", color: {string: :cyanish}
             puts "-----------------------------\n\n"
             # list action with submenu for simple or detailed
-            if method==:list
+            case method
+            when :list
               @cli.choose do |menu|
                 ap "Submenu"
                 puts "\n"
                 menu.prompt = "\nSimple or detailed? Please enter a number!"
                 menu.choice("Simple (just id and name)") do
-                  send method, simple: true
+                  list simple: true
                 end
                 menu.choice("Detailed (full JSON response)") do
-                  send method
+                  list
+                end
+                menu.choice("Back to Main Menu") do
+                  menu
+                end
+              end
+            # choose one of the pre-configured live stream setups
+            when :create
+              # build submenu with files from the data/live_streams directory
+              @cli.choose do |menu|
+                puts "\n"
+                ap "Submenu"
+                puts "\n"
+                menu.prompt = "\nWhat pre-configured camera or encoder will you use to connect to Wowza Streaming Cloud? Please enter a number!"
+                # let's search through the example directory
+                Dir.glob("./data/live_stream/encoder_types/*.json").each do |f|
+                  encoder_json = JSON.parse(File.read(f))
+                  name = encoder_json['live_stream']['name'] rescue 'Unknown Name. Please change the content of the JSON and add a name!'
+                  menu.choice(name) do
+                    create encoder_json
+                  end
                 end
                 menu.choice("Back to Main Menu") do
                   menu
                 end
               end
             # actions without additional parameters
-          elsif method==:workflow || method==:count || method==:create || method==:quit
+            when :workflow, :count, :quit
               send method
             # actions that needs a Live Stream ID to be selected from a list
             else
-              # build submenu with existing Live Streams
+              # build submenu with existing Live Streams / call list live streams
               response = call_api method: :get
               json = JSON.parse(response.body)
               @cli.choose do |menu|
