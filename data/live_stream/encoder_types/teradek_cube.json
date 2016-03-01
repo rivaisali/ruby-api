@@ -1,13 +1,10 @@
-# Other RTMP Push to Stream Source
 {
   "live_stream": {
-    "name": "API Example: Other RTMP Push to Stream Source",
+    "name": "API Example: Teradek Cube",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "other_rtmp",
-    "delivery_method": "cdn",
-    "use_stream_source": true,
+    "encoder": "teradek_cube",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

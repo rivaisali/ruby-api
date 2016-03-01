@@ -1,12 +1,10 @@
-# Axis
 {
   "live_stream": {
-    "name": "API Example: Axis",
+    "name": "API Example: Wowza Streaming Engine (single-bitrate)",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "axis",
-    "source_url": "username:password@127.0.0.1/axis-media/media.amp",
+    "encoder": "wowza_streaming_engine",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

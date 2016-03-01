@@ -1,12 +1,10 @@
-# IP Camera
 {
   "live_stream": {
-    "name": "API Example: IP Camera",
+    "name": "API Example: Matrox",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "ipcamera",
-    "source_url": "mysourcedomain.net/live/myStream",
+    "encoder": "matrox",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

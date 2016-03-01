@@ -1,7 +1,6 @@
-# Other RTMP Push with more more properties
 {
   "live_stream": {
-    "name": "API Example: More Properties on Other RTMP Push",
+    "name": "API Example: Other RTMP Push with more properties",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",

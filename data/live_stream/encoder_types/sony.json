@@ -1,12 +1,11 @@
-# Other RTMP Push
 {
   "live_stream": {
-    "name": "API Example: Other RTMP Push",
+    "name": "API Example: Sony",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "other_rtmp",
-    "delivery_method": "push",
+    "encoder": "sony",
+    "source_url": "127.0.0.1/video1",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

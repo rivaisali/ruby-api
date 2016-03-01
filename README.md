@@ -110,7 +110,7 @@ After launching the application, you'll see the main menu with several action it
 
 1. Show the number of live streams in your account
 2. List all live streams of your account
-3. Create a live stream with pre-configured settings         => data/live_stream/other_rtsp_pull.json
+3. Create a live stream with pre-configured settings         => data/live_stream/encoder_types/other_rtsp_pull.json
 4. Show the details of an existing live stream
 5. Update a live stream with pre-configured settings         => data/live_stream/update_example.json
 6. Start a live stream                                       => only for live streams with the state 'stopped'
@@ -142,7 +142,7 @@ You will be guided through each step.
 > Note: The live stream settings used by default in this example application are based on the 'Other RTSP Pull' encoder setting described in our user interface on https://cloud.wowza.com/. The data - along with lots of other examples of different live stream setups - are stored in JSON files in the [data/live_stream/](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/tree/master/data/live_stream) directory in this repository:
 
 ```json
-# data/live_stream/other_rtsp_pull.json
+# data/live_stream/encoder_types/other_rtsp_pull.json
 {
   "live_stream": {
     "name": "My Awesome live stream",

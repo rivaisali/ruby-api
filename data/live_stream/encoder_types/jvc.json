@@ -1,13 +1,11 @@
-# RTSP Pull
 {
   "live_stream": {
-    "name": "API Example: RTSP Pull",
+    "name": "API Example: JVC",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "other_rtsp",
-    "delivery_method": "pull",
-    "source_url": "198.233.230.244/axis-media/media.amp",
+    "encoder": "jvc",
+    "source_url": "prohd:encoder_password@127.0.0.1/stream",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

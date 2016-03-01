@@ -1,11 +1,10 @@
-# Wowza Streaming Engine (single-bitrate)
 {
   "live_stream": {
-    "name": "API Example: Wowza Streaming Engine (single-bitrate)",
+    "name": "API Example: Hauppauge",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "wowza_streaming_engine",
+    "encoder": "hauppauge",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }

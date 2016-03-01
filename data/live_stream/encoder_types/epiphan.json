@@ -1,13 +1,10 @@
-# Other RTMP Pull
 {
   "live_stream": {
-    "name": "API Example: Other RTMP Pull",
+    "name": "API Example: Epiphan",
     "transcoder_type": "transcoded",
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
-    "encoder": "other_rtmp",
-    "delivery_method": "pull",
-    "source_url": "mysourcedomain.net/live/myStream",
+    "encoder": "epiphan",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }
