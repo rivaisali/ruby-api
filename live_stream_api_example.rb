@@ -62,7 +62,7 @@ class LiveStreamApiExample
   # returns the full API response object
   #
   def create
-    create_json = JSON.parse(File.read('data/live_stream.json'))
+    create_json = JSON.parse(File.read('data/live_stream/rtsp_pull.json'))
     response = call_api method: :post, body: create_json
     ap JSON.parse(response.body)
     return response
@@ -90,7 +90,7 @@ class LiveStreamApiExample
   # returns the full API response object
   #
   def update uid
-    update_json = JSON.parse(File.read('data/live_stream_update.json'))
+    update_json = JSON.parse(File.read('data/live_stream/update.json'))
     response = call_api method: :patch, id: uid, body: update_json
     ap JSON.parse(response.body)
     return response
@@ -260,8 +260,8 @@ class LiveStreamApiExample
         @cli.ask next_step_text
         response = show id
         hosted_page_url = JSON.parse(response.body)['live_stream']['hosted_page_url']
-        ap "There it is! If you like to see a hosted page and a player with your Live Stream, feel free to open this URL in your browser: #{hosted_page_url}", color: {string: :yellowish}
-        puts "\n"
+        ap "There it is! If you like to see a hosted page and a player with your Live Stream, feel free to open this URL in your browser:", color: {string: :yellowish}
+        puts "\n#{hosted_page_url}\n"
         ap "And by the way: Now would also be a good time to tweet it or announce it somewhere programmatically.", color: {string: :yellowish}
         next_step += 1
       else
@@ -286,7 +286,7 @@ class LiveStreamApiExample
       next_step += 1
 
       puts "\n"
-      ap "Workflow finished!", color: {string: :green}
+      ap "Workflow finished!", color: {string: :yellowish}
       puts "\n"
       @cli.ask "Thank you! Hit Enter to return to Main Menu!"
     # Error handling if the Live Stream failed to start
@@ -428,9 +428,9 @@ class LiveStreamApiExample
     options = {
       count:         "Show the number of live streams in your account",
       list:          "List all live streams of your account",
-      create:        "Create a live stream with pre-configured settings         => data/live_stream.json",
+      create:        "Create a live stream with pre-configured settings         => data/live_stream/rtsp_pull.json",
       show:          "Show the details of an existing live stream",
-      update:        "Update a live stream with pre-configured settings         => data/live_stream_update.json",
+      update:        "Update a live stream with pre-configured settings         => data/live_stream/update.json",
       start:         "Start a live stream                                       => only for Live Streams with the state 'stopped'",
       reset:         "Reset a live stream                                       => only for Live Streams with the state 'started'",
       stop:          "Stop a live stream                                        => only for Live Streams with the state 'started'",
