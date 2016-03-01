@@ -262,7 +262,7 @@ class LiveStreamApiExample
         response = show id
         hosted_page_url = JSON.parse(response.body)['live_stream']['hosted_page_url']
         ap "There it is! If you like to see a hosted page and a player with your Live Stream, feel free to open this URL in your browser:", color: {string: :yellowish}
-        puts "\n#{hosted_page_url}\n"
+        puts "\n#{hosted_page_url}\n\n"
         ap "And by the way: Now would also be a good time to tweet it or announce it somewhere programmatically.", color: {string: :yellowish}
         next_step += 1
       else
