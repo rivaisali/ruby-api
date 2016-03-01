@@ -429,7 +429,7 @@ class LiveStreamApiExample
     options = {
       count:         "Show the number of live streams in your account",
       list:          "List all live streams of your account",
-      create:        "Create a live stream with pre-configured settings         => data/live_stream/encoder_types/other_rtsp_pull.json",
+      create:        "Create a live stream with pre-configured settings         => data/live_stream/encoder_types/*.json",
       show:          "Show the details of an existing live stream",
       update:        "Update a live stream with pre-configured settings         => data/live_stream/update_example.json",
       start:         "Start a live stream                                       => only for Live Streams with the state 'stopped'",
