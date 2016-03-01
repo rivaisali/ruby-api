@@ -139,7 +139,7 @@ Enter the number for the action you want to execute.
 
 You will be guided through each step.
 
-> Note: The live stream settings used by default in this example application are based on the 'Other RTSP Pull' encoder setting described in our user interface on https://cloud.wowza.com/. The data, along with lots of other examples of different live stream setups, are stored in JSON files in the [data/live_stream/](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/tree/master/data/live_stream) directory:
+> Note: The live stream settings used by default in this example application are based on the 'Other RTSP Pull' encoder setting described in our user interface on https://cloud.wowza.com/. The data - along with lots of other examples of different live stream setups - are stored in JSON files in the [data/live_stream/](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/tree/master/data/live_stream) directory in this repository:
 
 ```json
 # data/live_stream/other_rtsp_pull.json
