@@ -454,12 +454,11 @@ Example Response:
 <a name="contact"></a>
 ## Contact
 
-Wowza Media Systems™
-, LLC
+Wowza Media Systems™, LLC
 
 Wowza Media Systems provides developers with a platform to create streaming applications and solutions. See [Wowza Developer Tools](https://www.wowza.com/resources/developers) to learn more about our APIs and SDK.
 
 <a name="license"></a>
 ## License
 
-TODO: Add legal text here or LICENSE.txt file
+[LICENSE.txt](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/blob/master/License.txt)
