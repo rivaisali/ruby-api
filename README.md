@@ -461,4 +461,4 @@ Wowza Media Systems provides developers with a platform to create streaming appl
 <a name="license"></a>
 ## License
 
-[LICENSE.txt](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/blob/master/LICENSE.txt)
+This is distributed under the [Wowza Public License](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/blob/master/LICENSE.txt).
