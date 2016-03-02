@@ -207,6 +207,7 @@ class LiveStreamApiExample
       puts "\n"
       ap "An error occured. Please check the error above! Returning to Main Menu...", color: {string: :red}
       menu
+      return
     end
 
     # save the id and the player id of the live stream for later use
