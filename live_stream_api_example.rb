@@ -201,6 +201,14 @@ class LiveStreamApiExample
     encoder_json = JSON.parse(File.read('./data/live_stream/encoder_types/other_rtsp_pull.json'))
     response = create encoder_json
     response_json = JSON.parse(response.body)
+
+    # error handling
+    unless response.code=="201"
+      puts "\n"
+      ap "An error occured. Please check the error above! Returning to Main Menu...", color: {string: :red}
+      menu
+    end
+
     # save the id and the player id of the live stream for later use
     id = response_json['live_stream']['id']
     player_id = response_json['live_stream']['player_id']
