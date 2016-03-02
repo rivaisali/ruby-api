@@ -192,6 +192,10 @@ Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
   end
 
 end
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' https://api.cloud.wowza.com/api/v1/live_streams/
 ```
 
 Example Response:
@@ -220,15 +224,27 @@ Example Response:
 
 ### Create a live stream (POST)
 
+> **Note:** Check [/data/live_stream/encoder_types/*.json](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/tree/master/data/live_stream/encoder_types) for real-world JSON examples.
+
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/")
 ...
   request = Net::HTTP::Post.new uri.path
   # add the body to the request and parse the hash to JSON (or load it from a JSON file)
   request.body = {
-    "live_stream": { LIVE_STREAM_SETTINGS }
+    "live_stream": {
+      LIVE_STREAM_SETTINGS
+    }
   }.to_json
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -H 'Content-Type: application/json' -X POST -d '{
+#   "live_stream": {
+#     LIVE_STREAM_SETTINGS
+#   }
+# }' https://api.cloud.wowza.com/api/v1/live_streams/
 ```
 
 Example Response:
@@ -250,6 +266,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
 ...
   request = Net::HTTP::Get.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/
 ```
 
 Example Response:
@@ -289,15 +309,27 @@ Example Response:
 
 ### Update a live stream (PATCH)
 
+> **Note:** Check [/data/live_stream/update_example.json](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/tree/master/data/live_stream/update_example.json) for a JSON example.
+
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
 ...
   request = Net::HTTP::Patch.new uri.path
   # add the body to the request and parse the hash to JSON (or load it from a JSON file)
   request.body = {
-    "live_stream": { LIVE_STREAM_SETTINGS }
+    "live_stream": {
+      LIVE_STREAM_SETTINGS
+    }
   }.to_json
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -H 'Content-Type: application/json' -X PATCH -d '{
+#   "live_stream": {
+#     LIVE_STREAM_SETTINGS
+#   }
+# }' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/
 ```
 
 Example Response:
@@ -319,6 +351,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/star
 ...
   request = Net::HTTP::Put.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -X PUT -d '' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/start/
 ```
 
 Example Response:
@@ -338,6 +374,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/rese
 ...
   request = Net::HTTP::Put.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -X PUT -d '' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/reset/
 ```
 
 Example Response:
@@ -357,6 +397,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/stop
 ...
   request = Net::HTTP::Put.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -X PUT -d '' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/stop/
 ```
 
 Example Response:
@@ -376,6 +420,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/stat
 ...
   request = Net::HTTP::Get.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/state/
 ```
 
 Example Response:
@@ -390,11 +438,17 @@ Example Response:
 
 ### Poll the state of a player that was created with a live stream (GET)
 
+> **Note:** The player ID can be found in the property 'player_id' in a live stream JSON response.
+
 ```ruby
 uri = URI("https://api.cloud.wowza.com/api/v1/players/[PLAYER_ID]/state/")
 ...
   request = Net::HTTP::Get.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' https://api.cloud.wowza.com/api/v1/players/[PLAYER_ID]/state/
 ```
 
 Example Response:
@@ -414,6 +468,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/thum
 ...
   request = Net::HTTP::Get.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/thumbnail_url/
 ```
 
 Example Response:
@@ -433,6 +491,10 @@ uri = URI("https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/")
 ...
   request = Net::HTTP::Delete.new uri.path
 ...
+
+# Equivalent cURL command:
+#
+# curl -H 'wsc-api-key: KEY' -H 'wsc-access-key: KEY' -X DELETE https://api.cloud.wowza.com/api/v1/live_streams/[LIVE_STREAM_ID]/
 ```
 
 Example Response:
