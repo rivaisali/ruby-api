@@ -6,7 +6,7 @@
     "broadcast_location": "us_west_california",
     "encoder": "other_rtsp",
     "delivery_method": "pull",
-    "source_url": "198.233.230.244/axis-media/media.amp",
+    "source_url": "1.2.3.4/axis-media/media.amp",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }
