@@ -97,6 +97,8 @@ In Terminal, make sure you're in your application directory and execute the Ruby
 $ ./live_stream_api_example.rb
 ```
 
+> **Note:** Make sure the file is executable: ```$ chmod +x live_stream_api_example.rb```
+
 That's all.
 
 <a name="how_to_use"></a>
