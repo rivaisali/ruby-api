@@ -84,12 +84,12 @@ class LiveStreamApiExample
   # PATCH /live_streams/[ID]
   #
   # the JSON data with the settings of the Live Stream that is pushed to the API
-  # is stored in a file 'data/live_stream_update.json'
+  # is stored in a file 'data/live_stream/update_example.json'
   #
   # returns the full API response object
   #
   def update uid
-    update_json = JSON.parse(File.read('./data/live_stream/update.json'))
+    update_json = JSON.parse(File.read('./data/live_stream/update_example.json'))
     response = call_api method: :patch, id: uid, body: update_json
     ap JSON.parse(response.body)
     return response
