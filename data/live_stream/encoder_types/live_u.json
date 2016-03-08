@@ -5,7 +5,6 @@
     "billing_mode": "pay_as_you_go",
     "broadcast_location": "us_west_california",
     "encoder": "live_u",
-    "source_url": "prohd:encoder_password@127.0.0.1/stream",
     "aspect_ratio_width": 1920,
     "aspect_ratio_height": 1080
   }
