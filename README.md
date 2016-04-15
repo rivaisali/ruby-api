@@ -4,8 +4,6 @@
 
 This API example application demonstrates the live stream workflow using the `/live_streams` endpoint of the Wowza Streaming Cloud™ service REST API version 1.
 
-> **Note:** Wowza Streaming Cloud REST API version 1.0 is in a public preview release and isn't intended for use in production environments. All use of the Wowza Streaming Cloud REST API is subject to the Wowza Streaming Cloud Terms of Use.
-
 If you just want to know how to use the Wowza Streaming Cloud API using the Ruby Net::HTTP library, [look at this section](#how_to_ruby_net_http).
 
 ## Contents
