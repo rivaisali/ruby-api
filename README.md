@@ -44,7 +44,7 @@ You're done!
 
 To use the application, you need a valid [Wowza Streaming Cloud account](https://cloud.wowza.com/) and access to the API.
 
-> **Note:** If you don't have API access, [Request Access to Wowza Streaming Cloud API](https://www.wowza.com/products/streaming-cloud/features/api-access-request). After you're accepted to the Wowza Streaming Cloud REST API public preview, your API key will be available on the **API Access** page of your [Wowza Streaming Cloud account](https://cloud.wowza.com/).
+> **Note:** If you don't have API access, [Request Access to Wowza Streaming Cloud API](https://www.wowza.com/products/streaming-cloud/features/api-access-request). After you're accepted to the Wowza Streaming Cloud REST API, your API key will be available on the **API Access** page of your [Wowza Streaming Cloud account](https://cloud.wowza.com/).
 
 ### Put the 'API Key' and the 'API Access Key' into the configuration file
 
@@ -505,7 +505,7 @@ Example Response:
 <a name="references"></a>
 ## References
 
-[Get access to the Wowza Streaming Cloud REST API public preview](https://www.wowza.com/products/streaming-cloud/features/api-access-request)
+[Get access to the Wowza Streaming Cloud REST API](https://www.wowza.com/products/streaming-cloud/features/api-access-request)
 
 [Your API keys (API access required)](https://cloud.wowza.com/en/manage/access_keys)
 
