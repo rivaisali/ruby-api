@@ -524,3 +524,5 @@ Wowza Media Systems provides developers with a platform to create streaming appl
 ## License
 
 This code is distributed under the [BSD 3-Clause License](https://github.com/WowzaMediaSystems/wsc-api-examples-ruby/blob/master/LICENSE.txt).
+
+![alt tag](http://wowzalogs.com/stats/githubimage.php?plugin=wsc-api-examples-ruby)
