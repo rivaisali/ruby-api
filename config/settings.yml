@@ -1,7 +1,7 @@
 # The Base URL to the REST API service
 #
 # Sandbox environment (recommended, free of charge):
-api_base_url: "https://api-sandbox.cloud.wowza.com"
+api_base_url: "https://api.cloud.wowza.com"
 #
 # Live Environment (NOT free of charge!):
 # api_base_url: "https://api.cloud.wowza.com"
